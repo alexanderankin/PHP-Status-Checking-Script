@@ -4,5 +4,5 @@ $(document).ready(function (argument) {
 		$.get("/script/log.log", function (data) {
 			$('#ouptut_view').text(data);		
 		})
-	});
+	}, 500);
 })
