@@ -3,7 +3,7 @@
 <head>
 	<title>Script: Welcome</title>
 	<link rel="stylesheet" href="/assets/bootstrap.min.css">
-	<script src="/assets/code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="/assets/jquery-2.1.4.min.js"></script>
 	<script src="/assets/bootstrap.min.js"></script>
 </head>
 <body>
