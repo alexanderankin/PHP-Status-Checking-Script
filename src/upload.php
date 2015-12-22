@@ -9,7 +9,7 @@
 copy($_FILES["fileToUpload"]["tmp_name"], "script/".$_FILES["fileToUpload"]["name"]);
 
 //run script
-exec("script/script.sh ".$_FILES["fileToUpload"]["name"]. " & ");
+exec("script/script.sh ".$_FILES["fileToUpload"]["name"]. " > /dev/null 2>&1 & ");
 
 // forward user to result page
 header("Location: result.php");
