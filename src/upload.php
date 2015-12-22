@@ -9,7 +9,8 @@
 copy($_FILES["fileToUpload"]["tmp_name"], "script/".$_FILES["fileToUpload"]["name"]);
 
 //run script
-exec("script/script.sh ".$_FILES["fileToUpload"]["name"]. " > /dev/null 2>&1 & ");
+$your_command = "script/script.sh ".$_FILES["fileToUpload"]["name"];
+exec('/bin/bash -c "exec nohup setsid '.$your_command.'> /dev/null 2>&1 &"');
 
 // forward user to result page
 header("Location: result.php");
