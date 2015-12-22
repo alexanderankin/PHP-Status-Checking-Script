@@ -1,14 +1,20 @@
-if [[ script/log.log -a ]]; then
-	echo "***" >> script/log.log
-elif [[ true ]]; then
-	touch script/log.log
-	echo "elif ran" > /home/toor/debug
+#!/bin/bash
+#or whatever shell you use
+
+logf=script/log.log #logfilename
+dbgf=/home/toor/debug #debug file
+if [ ! -f $logf ]; then
+    touch $logf #create file  if doesnot exisrs
+     echo "elif ran" > $dbgf
+else
+    echo "***" >> $logf
 fi
 
-echo "Working on file $1" >> script/log.log
-whoami >> script/log.log
+echo "`whoami` Working on file $1 " >> $logf
+max_num=10
+timeout=1
 
-for i in {0..4}; do
-	echo $i >> script/log.log
-	sleep 1
+for ((i=0;i<$max_num;i++)); do
+    echo "Outpit line number $i"  >> $logf
+    sleep $timeout
 done
